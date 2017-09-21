@@ -85,6 +85,7 @@ const goldbergType = new GraphQLObjectType({
  }
 });
 
+// Resolver function
 const getGoldberg = id => {
  return goldbergs[id]
 }

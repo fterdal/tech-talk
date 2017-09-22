@@ -1,6 +1,4 @@
 // Node Modules
-const webpack = require('webpack');
-const WebpackDevServer = require('webpack-dev-server');
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const graphql = require('graphql');

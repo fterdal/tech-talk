@@ -88,10 +88,14 @@ const getGoldberg = id => {
  return goldbergs[id]
 }
 
-// Query Type
+const getGoldbergs = () => {
+ return goldbergs
+}
+
+// Query Types
 const queryType = new GraphQLObjectType({
   name: "query",
-  description: "Goldberg query",
+  description: "Goldberg-query",
   fields: {
     goldberg: {
       type: goldbergType,
@@ -102,6 +106,19 @@ const queryType = new GraphQLObjectType({
       },
       resolve: (_, args) => {
         return getGoldberg(args.id)
+      }
+    }
+  }
+});
+
+const listGoldbergs = new GraphQLObjectType({
+  name: "listquery",
+  description: "query-Goldbergs",
+  fields: {
+    goldberg: {
+      type: goldbergType,
+      resolve: (_, args) => {
+        return getGoldbergs()
       }
     }
   }
